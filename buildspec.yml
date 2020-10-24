@@ -29,7 +29,7 @@ phases:
       - . /tmp/aws_cred_export.txt && terraform init
   build:
     commands:      
-      - terraform apply   -var "region=$region" -var "prefix=$applicationname" -auto-approve
+      - terraform apply   -auto-approve
       - echo "Post apply build"
   post_build:
     commands:
