@@ -1,7 +1,7 @@
 resource "aws_security_group" "crypto" {
   vpc_id = "vpc-09d5acafb879728b3"
   name = "${var.prefix}"
-  tags {
+  tags = {
         Name = "${var.prefix}"
   }
   description = "${var.prefix} SG"
