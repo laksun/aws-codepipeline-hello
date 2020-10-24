@@ -6,7 +6,7 @@
         "DataPartName" : {
           "Description": "the data part name as appear in the cloudformation stack name",
           "Type": "String",
-          "Default" : "elemental-codepipeline-giu"
+          "Default" : "elemental-codepipeline-giuseppe"
         }
   },
   "Resources" : {
@@ -63,11 +63,11 @@
             ]
           },
           "Source": {
-            "Location": "https://github.com/laksun/run-terraform-inside-aws-codebuild",
+            "Location": "https://github.com/laksun/aws-codepipeline-hello.git",
             "Type": "GITHUB"
           },
           "TimeoutInMinutes": 10,
-          "Tags": [ {  "Key": "Project", "Value": "Run Terraform From CodeBuild"  } ]
+          "Tags": [ {  "Key": "Project", "Value": "Run Terraform From CodeBuild example Guiseppe"  } ]
         }
       }
     }
