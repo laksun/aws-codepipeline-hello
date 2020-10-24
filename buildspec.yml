@@ -1,9 +1,8 @@
 version: 0.2
 
-#env:
-#  variables:
-#    key: "value"
-#    key: "value"
+env:
+  variables:
+    TF_VERSION: "0.12.21"
 
 phases:
   install:
@@ -29,10 +28,9 @@ phases:
       - cat provider-output-backend.tf
       - . /tmp/aws_cred_export.txt && terraform init
   build:
-    commands:
-      - . /tmp/aws_cred_export.txt &&  python runterraform.js.py $region $applicationname $destroy
+    commands:      
+      - terraform apply   -var "region=$region" -var "prefix=$applicationname" -auto-approve
       - echo "Post apply build"
-      - terraform apply -auto-approve  -var "region=us-east-1" -var "prefix=elemental-cf-codepeline-git-hello"
   post_build:
     commands:
       - echo "Nothing to do in the post_build for now"
